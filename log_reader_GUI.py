@@ -76,6 +76,7 @@ class Log_reader(Tk):
         self.lbl_log_path.config(text=f"Лог-файл: {os.path.basename(self.log_path)}")
         with open(self.log_path, "r+b") as log_f:
             self.log = log_f.read()
+        self.textw.delete('1.0', END)
         self.textw.insert('1.0', self.log)
     
     def __add_DEBUG(self):
