@@ -59,7 +59,6 @@ class Log_reader(Tk):
         self.textw.pack(anchor=W, side=LEFT, fill=BOTH, expand=True)
         self.textw.tag_configure("highlight", background="yellow")
         self.textw.tag_configure("curhighlight",  background="orange")
-        self.textw.bind("<ButtonRelease-1>", self.__get_position)
         self.notebook.add(self.fr_text, text="Просмотр файла", sticky=NSEW)
 
         self.fr_findings = Frame()
@@ -178,7 +177,7 @@ class Log_reader(Tk):
                             k += 1
                             j = len(self.key_words)
                         j += 1
-                    
+        self.notebook.select(1)            
 
         
 
